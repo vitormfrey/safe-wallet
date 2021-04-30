@@ -17,7 +17,7 @@ export default Vue.extend({
     }
   },
   props: {
-    valor: { type: Number, required: true, default: 0 }
+    valor: { type: Number, default: 0 }
   }
 })
 </script>

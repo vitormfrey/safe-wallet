@@ -1,6 +1,7 @@
 vabse
 <template>
   <div class="container">
+    <Date />
     <div class="bloco"><Balance /></div>
   </div>
 </template>
@@ -18,5 +19,9 @@ export default Vue.extend({})
   grid-template-columns: 400px;
   justify-content: center;
   align-content: center;
+}
+
+.Date {
+  margin: 40px 0px 0px;
 }
 </style>

@@ -1,17 +1,15 @@
 <template>
-  <div class="container">
+  <div class="saldo-container">
     <HomeTemplate />
-
-    <div class="saldo-container">
-      <HomeBalance />
-    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  layout: 'safeWallet'
+})
 </script>
 
 <style scoped>

@@ -1,10 +1,7 @@
+vabse
 <template>
   <div class="container">
-    <HomeTemplate />
-
-    <div class="saldo-container">
-      <HomeBalance />
-    </div>
+    <div class="bloco"><Balance /></div>
   </div>
 </template>
 
@@ -15,11 +12,11 @@ export default Vue.extend({})
 </script>
 
 <style scoped>
-#app {
+.container {
   height: 100%;
-}
-
-.saldo-container {
-  height: 100%;
+  display: grid;
+  grid-template-columns: 400px;
+  justify-content: center;
+  align-content: center;
 }
 </style>

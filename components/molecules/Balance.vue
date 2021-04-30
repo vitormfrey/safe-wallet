@@ -1,14 +1,27 @@
 <template>
-  <div>
-    <p>Saldo em conta</p>
-    <WalletValue />
-    <div class="average">
+  <div class="container">
+    <div class="balance">
+      <p>Saldo em conta</p>
+      <WalletValue />
+    </div>
+
+    <div class="balance-text">
       <p>Receitas</p>
+      <p>Despesas</p>
+    </div>
+
+    <div class="balance-value">
+      <span class="cicle">
+        <font-awesome-icon icon="arrow-circle-up" style="color: green" />
+      </span>
       <WalletValue
         :valor="receita.quantia"
         :class="[{ expense: receita.tipo }, revenue]"
       />
-      <p>Despesas</p>
+
+      <span class="cicle">
+        <font-awesome-icon icon="arrow-circle-down" style="color: red" />
+      </span>
       <WalletValue
         :valor="despesa.quantia"
         :class="[{ revenue: despesa.tipo }, expense]"
@@ -39,17 +52,51 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-p {
-  text-align: center;
+.container {
+  /* Definindo Grid */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80px 30px 30px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'balance balance balance'
+    'text text text'
+    'value value value';
+  padding: 1.5rem;
+
+  /* Ajustando Estilo */
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.25);
 }
-.average {
+.balance {
+  display: grid;
+  grid-area: balance;
+  justify-content: center;
+}
+.balance-text,
+.balance-value {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: 1fr 1fr;
 }
-.average .WalletValue {
+.balance-text {
+  text-align: center;
+  grid-area: text;
+}
+
+.balance-value {
+  grid-area: value;
+  justify-content: baseline;
+}
+.balance-value .WalletValue {
   font-size: 15px;
 }
+.cicle {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  font-size: 20px;
+}
+
 .revenue {
   color: green;
 }

@@ -24,8 +24,9 @@ export default Vue.extend({
 
 <style scoped>
 p {
+  margin: 0px;
+  padding: 0px;
   font-size: 2.25rem;
-  text-align: center;
   color: #444;
 }
 </style>

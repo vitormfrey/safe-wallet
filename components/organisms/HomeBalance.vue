@@ -1,8 +1,8 @@
-vabse
 <template>
   <div class="container">
     <Date />
     <div class="bloco"><Balance /></div>
+    <LastReleases />
   </div>
 </template>
 

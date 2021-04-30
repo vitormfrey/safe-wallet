@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <HambuguerMenu />
-  </div>
+  <div><HomeBalance /></div>
 </template>
 
 <script lang="ts">

@@ -1,19 +1,26 @@
 <template>
-  <div>
-    <div v-for="(conta, index) in dados" :key="conta.id">
-      <template v-if="index + 1 < 4"
-        ><p>{{ conta.categoria }}</p>
-        <span class="dot"></span>
-        <p>Descrição: {{ conta.name }}</p>
-        <WalletValue :valor="conta.valor"
-      /></template>
-    </div>
+  <div class="lastReleases">
+    <h4>Últimos lançamentos</h4>
+    <DataRealeases
+      v-for="conta in limitData"
+      :key="conta.id"
+      :categoria="conta.categoria"
+      :name="conta.name"
+      :tipo="conta.tipo"
+      :valor="conta.valor"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-
+interface Conta {
+  id: Number
+  name: String
+  categoria: String
+  valor: Number
+  tipo: Boolean
+}
 export default Vue.extend({
   data() {
     return {
@@ -46,10 +53,32 @@ export default Vue.extend({
           valor: 69,
           tipo: true
         }
-      ]
+      ] as Conta[]
+    }
+  },
+  computed: {
+    limitData(): Conta[] {
+      return this.dados.slice(0, 3)
     }
   }
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.lastReleases {
+  /* GRID */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto, repeat(3, 80px);
+  grid-gap: 1rem;
+  /* ESTILIZAÇÕES  */
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+  background-color: #f5f5f5f5;
+}
+.lastReleases h4 {
+  color: #636363;
+  font-size: 1rem;
+}
+</style>

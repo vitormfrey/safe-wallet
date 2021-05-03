@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <Date />
-    <div class="bloco"><Balance /></div>
+    <Balance />
     <LastReleases />
+    <CreateRecord />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ export default Vue.extend({})
   grid-template-columns: 400px;
   justify-content: center;
   align-content: center;
+  grid-gap: 1rem;
 }
 
 .Date {

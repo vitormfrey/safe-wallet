@@ -14,8 +14,9 @@ export default Vue.extend({
 
 <style scoped>
 .title {
+  margin: 0;
+  padding: 0;
   font-size: 2.25rem; /*36px*/
   text-align: center;
-  display: block;
 }
 </style>

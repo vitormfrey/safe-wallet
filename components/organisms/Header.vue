@@ -1,9 +1,12 @@
 <template>
   <div class="container">
-    <BurgerButton
-      :active="menuActive"
-      @toggle-menu="menuActive = !menuActive"
-    />
+    <div class="header-page">
+      <BurgerButton
+        :active="menuActive"
+        @toggle-menu="menuActive = !menuActive"
+      />
+      <h2>test</h2>
+    </div>
     <Sidebar v-show="menuActive" @toggle-menu="menuActive = !menuActive">
       <ul class="sidebar-panel-nav">
         <li><NuxtLink to="/login">Categoria</NuxtLink></li>
@@ -21,7 +24,8 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      menuActive: false
+      menuActive: false,
+      titlePage: ''
     }
   }
 })
@@ -30,13 +34,21 @@ export default Vue.extend({
 <style scoped>
 .container {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1rem;
   justify-content: start;
+  grid-auto-flow: column;
   padding: 1rem;
   border-radius: 0px 0px 5px 5px;
   background-color: #006cd0;
 }
+
+.header-page {
+  display: grid;
+  grid-template-columns: 50px;
+  grid-auto-flow: column;
+  justify-items: space-between;
+}
+
 html {
   height: 100%;
   overflow: hidden;

@@ -1,5 +1,8 @@
 <template>
-  <div class="container"><FormRecord /></div>
+  <div class="container">
+    <TitlePageApp text="Criar Registro" />
+    <FormRecord />
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,5 +19,6 @@ export default Vue.extend({})
   justify-content: center;
   align-content: center;
   grid-gap: 1rem;
+  margin-top: 20px;
 }
 </style>

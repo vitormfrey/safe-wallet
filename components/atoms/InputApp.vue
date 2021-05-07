@@ -14,7 +14,7 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     types: { type: String, required: false, default: 'text' },
-    placeholder: { type: String, required: true },
+    placeholder: { type: String, required: false },
     data: { type: [Number, String], default: null }
   }
 })

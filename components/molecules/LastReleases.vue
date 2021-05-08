@@ -69,7 +69,6 @@ export default Vue.extend({
   /* GRID */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto, repeat(3, 80px);
   grid-gap: 1rem;
   /* ESTILIZAÇÕES  */
   padding: 1rem;

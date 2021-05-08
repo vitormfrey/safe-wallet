@@ -35,6 +35,7 @@ export default Vue.extend({
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 25px);
   grid-auto-flow: column;
+  max-height: 80px;
   padding: 1rem;
   /* Estilização */
   background-color: #fff;

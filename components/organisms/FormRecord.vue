@@ -3,11 +3,17 @@
     <form class="form" @submit.prevent="enviar">
       <label for=""> Descrição</label>
       <InputApp v-model="recordForm.description" />
+
       <label for=""> Valor</label>
       <InputApp v-model="recordForm.value" />
+
       <label for=""> Categoria</label>
       <InputApp v-model="recordForm.category" />
-      <div class="select-container">
+
+      <label for=""> Data</label>
+      <InputApp v-model="recordForm.day" type="date" />
+
+      <!-- <div class="select-container">
         <label for="">Dia</label>
         <select v-model="recordForm.day" class="select">
           <option></option>
@@ -22,17 +28,20 @@
         <select v-model="recordForm.year" class="select">
           <option></option>
         </select>
-      </div>
+      </div> -->
+
       <div class="radio-container">
         <div class="radio">
           <input v-model="recordForm.type" type="radio" :value="true" />
           <label for="">Despesa</label>
         </div>
+
         <div class="radio">
           <input v-model="recordForm.type" type="radio" :value="false" />
           <label for="">Receita</label>
         </div>
       </div>
+
       <Button text="SALVAR" />
     </form>
   </div>

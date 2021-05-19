@@ -6,7 +6,7 @@
 
 <style scoped>
 .container {
-  width: 85%;
+  width: 70%;
   max-width: 1150px;
   margin: 0 auto;
 }

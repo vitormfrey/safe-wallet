@@ -35,8 +35,7 @@ export default {
 
   axios: {
     // eslint-disable-next-line prettier/prettier
-    baseURL:
-      process.env.NOV_ENV === 'production' ? '' : 'https://localhost:3000'
+    baseURL: process.env.NOV_ENV === 'production' ? '' : 'http://localhost:3333'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

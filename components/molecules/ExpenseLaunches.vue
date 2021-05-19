@@ -2,110 +2,38 @@
   <div class="container">
     <div class="container-card">
       <h4>Despesas</h4>
-      <DataRealeases
+      <NuxtLink
         v-for="conta in expenseData"
         :key="conta.id"
-        :categoria="conta.categoria"
-        :name="conta.name"
-        :tipo="conta.tipo"
-        :valor="conta.valor"
-      />
+        :to="`/updateRecord/${conta.id}`"
+      >
+        <DataRealeases
+          :categoria="conta.categoria"
+          :name="conta.name"
+          :tipo="conta.tipo"
+          :valor="conta.valor"
+        />
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-interface Conta {
-  id: Number
-  name: String
-  categoria: String
-  valor: Number
-  tipo: Boolean
-}
+import { contas } from '@/store'
+import { Conta } from '@/models'
 
 export default Vue.extend({
-  data() {
-    return {
-      dados: [
-        {
-          id: 1,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        },
-        {
-          id: 2,
-          name: 'Sálario Aton',
-          categoria: 'Sálario',
-          valor: 1900,
-          tipo: false
-        },
-        {
-          id: 3,
-          name: 'Saia Ana',
-          categoria: 'Diversos',
-          valor: 30,
-          tipo: false
-        },
-        {
-          id: 4,
-          name: 'Vivo',
-          categoria: 'Telefone',
-          valor: 69,
-          tipo: true
-        },
-        {
-          id: 5,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        },
-        {
-          id: 6,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        },
-        {
-          id: 7,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        },
-        {
-          id: 8,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        },
-        {
-          id: 9,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        },
-        {
-          id: 10,
-          name: 'CPFL',
-          categoria: 'Energia',
-          valor: 1350,
-          tipo: true
-        }
-      ] as Conta[]
-    }
-  },
   computed: {
     expenseData(): Conta[] {
       // Lógica pra retornar somente despesas
       // Deve ser implementado no VueX
-      return this.dados.filter((dado) => dado.tipo === true)
+      return contas.$all.filter((dado) => dado.tipo === true)
+    }
+  },
+  methods: {
+    contas(conta: Object) {
+      console.log(conta)
     }
   }
 })
@@ -147,5 +75,16 @@ export default Vue.extend({
 .container-card h4 {
   color: #636363;
   font-size: 1rem;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
 }
 </style>

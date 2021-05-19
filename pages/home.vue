@@ -6,9 +6,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
+import { contas } from '@/store'
 export default Vue.extend({
-  layout: 'safeWallet'
+  layout: 'safeWallet',
+  async asyncData() {
+    await contas.index()
+  }
 })
 </script>
 

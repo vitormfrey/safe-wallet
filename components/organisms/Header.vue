@@ -9,10 +9,10 @@
     </div>
     <Sidebar v-show="menuActive" @toggle-menu="menuActive = !menuActive">
       <ul class="sidebar-panel-nav">
-        <li><NuxtLink to="/login">Categoria</NuxtLink></li>
+        <li><NuxtLink to="/home">Home</NuxtLink></li>
         <li><NuxtLink to="/login">Carteira</NuxtLink></li>
-        <li><NuxtLink to="/login">Despesas e Receitas</NuxtLink></li>
-        <li><NuxtLink to="/login">Investimentos Seguros</NuxtLink></li>
+        <li><NuxtLink to="/releases">Despesas e Receitas</NuxtLink></li>
+        <li><NuxtLink to="/test">Investimentos Seguros</NuxtLink></li>
       </ul>
     </Sidebar>
   </div>

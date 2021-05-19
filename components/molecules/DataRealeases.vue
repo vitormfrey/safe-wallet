@@ -42,6 +42,10 @@ export default Vue.extend({
   border-radius: 10px;
   box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.25);
 }
+.card:hover {
+  background-color: #f5f5f5f5;
+  cursor: pointer;
+}
 
 .category,
 .description {

@@ -1,6 +1,6 @@
 <template>
   <p class="WalletValue">
-    {{ valor | numeroPreco }}
+    {{ convertValor | numeroPreco }}
   </p>
 </template>
 
@@ -17,7 +17,15 @@ export default Vue.extend({
     }
   },
   props: {
-    valor: { type: Number, default: 0 }
+    valor: {
+      type: String,
+      default: '0'
+    }
+  },
+  computed: {
+    convertValor(): number {
+      return parseInt(this.valor)
+    }
   }
 })
 </script>

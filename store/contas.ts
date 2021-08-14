@@ -1,22 +1,13 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators'
-import { Conta } from '@/models'
+import { Conta, Infos } from '@/models'
 import { $axios, $cookies } from '@/utils/nuxt-instance'
 interface UserId {
-  user_id: Number
+  user_id: number
 }
 interface RegisterId {
-  register_id: Number
-}
-
-interface BaseInfo {
-  despesa: number
-  receita: number
-  wallet: number
-}
-interface Infos {
-  baseInfos: BaseInfo
+  register_id: number
 }
 
 @Module({ name: 'contas', stateFactory: true, namespaced: true })
@@ -62,7 +53,7 @@ export default class Contas extends VuexModule {
   private CHANGE_DATA(payload: any) {
     this.conta = payload
     const indexConta = this.contas.findIndex(
-      (contas) => contas.register_id === payload.register_id
+      (contas: any) => contas.register_id === payload.register_id
     )
     this.contas[indexConta] = payload
   }

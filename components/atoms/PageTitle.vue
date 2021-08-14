@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">{{ text }}</h1>
+  <h1 class="page-title">{{ text }}</h1>
 </template>
 
 <script lang="ts">
@@ -13,7 +13,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.title {
+.page-title {
   margin: 0;
   padding: 0;
   font-size: 2.25rem; /*36px*/

@@ -18,13 +18,14 @@ export default Vue.extend({
   },
   props: {
     valor: {
-      type: String,
+      type: [String, Number],
       default: '0'
     }
   },
   computed: {
-    convertValor(): number {
-      return parseInt(this.valor)
+    convertValor() {
+      const valor: any = this.valor
+      return parseInt(valor)
     }
   }
 })

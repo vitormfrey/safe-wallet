@@ -1,6 +1,6 @@
 <template>
   <div class="container-recordButton">
-    <NuxtLink to="/record" class="recordButton"
+    <NuxtLink :to="to" class="recordButton"
       ><font-awesome-icon icon="plus" style="color: #fff" />
     </NuxtLink>
   </div>
@@ -9,7 +9,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  props: {
+    to: { type: String, required: true, default: '/record' }
+  }
+})
 </script>
 
 <style scoped>

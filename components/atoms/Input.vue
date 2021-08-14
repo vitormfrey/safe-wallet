@@ -24,8 +24,8 @@ export default Vue.extend({
 .input {
   border: solid 1px rgba(55, 135, 208, 0.53);
   border-radius: 10px;
-  padding: 5px 15px;
-  /* Verificar com o Grupo se vai querer esse estilo */
+  padding: 15px 15px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
   /* filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.25)); */
 }
 .input:focus {

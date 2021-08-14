@@ -1,21 +1,15 @@
 <template>
-  <input
-    class="input"
-    :type="types"
-    :placeholder="placeholder"
-    :value="data"
-    @input="$emit('input', $event.target.value)"
-  />
+  <input class="input" @input="updateRecord" />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-
+import { contas } from '@/store'
 export default Vue.extend({
-  props: {
-    types: { type: String, required: false, default: 'text' },
-    placeholder: { type: String, required: false, default: '...' },
-    data: { type: [Number, String], default: null }
+  methods: {
+    updateRecord(e: any) {
+      contas.updateRegister(e.target.value)
+    }
   }
 })
 </script>

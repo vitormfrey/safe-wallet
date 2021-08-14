@@ -28,6 +28,9 @@ export default Vue.extend({
       ]
     }
   },
+  created() {
+    this.date()
+  },
   methods: {
     date(): void {
       const data = new Date()
@@ -41,9 +44,6 @@ export default Vue.extend({
       this.mes = mes
       this.data = strData
     }
-  },
-  created() {
-    this.date()
   }
 })
 </script>
